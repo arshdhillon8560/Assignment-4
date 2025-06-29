@@ -91,7 +91,8 @@ _Add screenshots or GIFs here to show the layout, Kanban board, and theme switch
 
 ## 📦 Deployment
 
-You can deploy this project to:
+You can deploy this project on vercel :
+https://foodmatoadminpanel.vercel.app/
 
 
 ---
