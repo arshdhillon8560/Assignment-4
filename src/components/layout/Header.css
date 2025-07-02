@@ -2,63 +2,56 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 28px;
+  padding: 12px 20px;
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .header-left {
   display: flex;
   align-items: center;
-  flex: 0 1 auto;
+  gap: 12px;
 }
 
 .search-container {
-  position: relative;
-  width: 100%;
-  max-width: 280px;
-  flex-shrink: 1;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 4px 10px;
+  max-width: 140px;
+  transition: max-width 0.3s ease;
 }
 
 .search-icon {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-secondary);
+  color: white;
+  margin-right: 6px;
 }
 
 .search-input {
-  width: 100%;
-  padding: 10px 16px 10px 42px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
-  color: var(--text-primary);
-  font-size: 14px;
+  background: transparent;
+  border: none;
   outline: none;
-  transition: all 0.3s ease;
+  color: white;
+  font-size: 12px;
+  width: 120px;
+  height: 12px;
+  padding: 2px 0;
 }
 
 .search-input::placeholder {
-  color: var(--text-secondary);
-}
-
-.search-input:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.15);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .header-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 }
 
 .theme-selector {
@@ -68,26 +61,15 @@
 }
 
 .theme-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  padding: 8px 12px;
+  padding: 6px 12px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text-primary);
-  font-size: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 12px;
+  appearance: none;
   cursor: pointer;
-  outline: none;
-  transition: all 0.3s ease;
-  min-width: 120px;
-}
-
-.theme-select:hover,
-.theme-select:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.15);
+  margin-bottom: 7px;
 }
 
 .theme-selector::after {
@@ -95,115 +77,101 @@
   position: absolute;
   right: 10px;
   font-size: 10px;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.5);
   pointer-events: none;
-}
-
-.theme-select option {
-  background-color: var(--background-color, #121212);
-  color: var(--text-primary);
-  font-size: 14px;
 }
 
 .user-profile {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  border-radius: 10px;
+  gap: 5px;
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
+  padding: 4px 4px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  height: 40px;
-  min-width: 0;
-  max-width: 180px;
+  backdrop-filter: blur(5px);
+  max-width: 160px;
   overflow: hidden;
   white-space: nowrap;
-}
-
-.user-profile:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin: 2px;
 }
 
 .user-avatar {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 35px;
+  background: linear-gradient(135deg, #FF6B35, #4ECDC4);
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .user-info {
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
-  min-width: 0;
-}
-
-.user-name,
-.user-role {
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .user-name {
   font-size: 12px;
   font-weight: 500;
-  color: var(--text-primary);
+  color: white;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .user-role {
   font-size: 10px;
-  color: var(--text-secondary);
+  color: #4ECDC4;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-/* Responsive Tweaks */
+/* ✅ Responsive Tweaks */
 @media (max-width: 768px) {
-  .header {
-    padding: 12px 16px;
-  }
-
-  .search-container {
-    max-width: 220px;
-  }
-
-  .theme-selector,
-  .user-info {
-    display: none;
-  }
-}
-
-@media (max-width: 640px) {
-  .user-info {
+  .theme-select {
     display: none;
   }
 
   .search-container {
-    max-width: 180px;
+    max-width: 130px;
+  }
+
+  .user-info {
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
+  .search-container {
+    max-width: 100px;
+    padding: 4px 6px;
+  }
+
+  .search-input {
+    font-size: 10px;
+    width: 80px;
+  }
+
   .header-right {
     gap: 10px;
   }
 
-  .search-container {
-    max-width: 160px;
+  .user-profile {
+    gap: 6px;
+    padding: 4px 8px;
+    max-width: 110px;
   }
 
   .user-avatar {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
   }
 }

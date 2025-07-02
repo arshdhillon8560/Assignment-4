@@ -8,6 +8,7 @@ const Header = ({ onToggleSidebar }) => {
   return (
     <header className="header">
       <div className="header-left">
+        <button className="mobile-toggle" onClick={onToggleSidebar}>☰</button>
         <div className="search-container">
           <Search className="search-icon" size={18} />
           <input 
